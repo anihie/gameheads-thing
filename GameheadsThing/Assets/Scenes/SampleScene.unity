@@ -158,7 +158,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &65442129
 CapsuleCollider:
@@ -252,6 +252,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d00592225fcd4924b9b037299297743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myInt: 0
+  speed: 1
+  jumpStrength: 10
 --- !u!1 &92962724
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,8 +539,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.2164396, y: -0, z: -0, w: 0.97629607}
-  m_LocalPosition: {x: -1.8307095, y: 2.4055064, z: -10.440647}
+  m_LocalRotation: {x: 0.2164396, y: 0, z: 0, w: 0.97629607}
+  m_LocalPosition: {x: -1, y: 2.4055064, z: -10.440647}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
