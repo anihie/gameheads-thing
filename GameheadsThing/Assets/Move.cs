@@ -10,9 +10,10 @@ public class Move : MonoBehaviour
     public int myInt;
     public float speed = 1.0f;
     public float jumpStrength = 10.0f;
+    public float rotationSpeed = 5.0f;
     
     private Rigidbody rb;
-    private Vector2 lastMousePosition = newVector2(0.0f, 0.0f);
+    private Vector2 lastMousePosition = new Vector2(0.0f, 0.0f);
 
     // public Vector3 myVector = new Vector3(0.0f, 0.0f, 0.0f);
 
@@ -30,7 +31,10 @@ public class Move : MonoBehaviour
     void RotateCamera()
     {
         Vector2 currentMousePosition = Input.mousePosition;
-        Vector2 mouseDistance = Input.mousePosition - lastMousePosition;
+        Vector2 mouseDistance = currentMousePosition - lastMousePosition;
+
+        Vector3 CameraRotation = new Vector3(0.0f, rotationSpeed * mouseDistance.x * Time.deltaTime, 0.0f);
+        transform.Rotate(CameraRotation);
 
         lastMousePosition = currentMousePosition;
     }
@@ -43,6 +47,7 @@ public class Move : MonoBehaviour
     void Update()
     {
 
+        RotateCamera();
 
         Vector3 movDir = new Vector3(0.0f, 0.0f, 0.0f);
 
