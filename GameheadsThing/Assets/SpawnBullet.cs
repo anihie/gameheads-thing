@@ -9,6 +9,7 @@ public class SpawnBullet : MonoBehaviour
 
     public float spawnTime = 0.0f;
     public float bulletForce = 3.0f;
+    public float targetSpeed = 0.0f;
 
     private float currentTime = 0.0f;
 
@@ -27,10 +28,9 @@ public class SpawnBullet : MonoBehaviour
             currentTime = 0.0f;
         }
 
-        Vector3 targetDirection = target.transform.position - transform.position;
         float rotationStep = targetSpeed * Time.deltaTime;
-        Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, targetSpeed, 0.0f);
-
+        Vector3 newDirection = Vector3.RotateTowards(transform.forward, target.transform.position, targetSpeed, 0.0f);
+        transform.rotation = Quaternion.LookRotation(newDirection);
     }
 }
 
